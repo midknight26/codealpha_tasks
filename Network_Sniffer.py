@@ -25,7 +25,7 @@ def main():
     # Check platform
     if platform.system() == "Windows":
         conn = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
-        conn.bind(("192.168.59.158", 0))  # Bind to all interfaces
+        conn.bind(("0.0.0.0", 0))  # Bind to all interfaces
         conn.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
         conn.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)  # Enable promiscuous mode
     else:
